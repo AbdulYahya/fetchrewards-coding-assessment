@@ -1,0 +1,20 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+boto3 = "*"
+pyyaml = "*"
+python-dotenv = "*"
+pyaml-env = "*"
+fetchrewards-assessment = {editable = true, path = "."}
+
+[dev-packages]
+flake8 = "*"
+
+[requires]
+python_version = "3.9"
+
+[pipenv]
+allow_prereleases = true
