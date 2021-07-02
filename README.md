@@ -3,16 +3,7 @@
 
 Develop an automation program that takes a YAML configuration file as input and deploys a Linux AWS EC2 instance with two volumes and two users.
 
-Here are some guidelines to follow:
-
-Create a YAML file based on the configuration provided below for consumption by your appli`cation
-You may modify the configuration, but do not do so to the extent that you fundamentally change the exercise
-Include the YAML config file in your repo
-Use Python and Boto3
-Do not use configuration management, provisioning, or IaC tools such as Ansible, CloudFormation, Terraform, etc.
-
 ---
-<br />
 
 ## Requirements
 
@@ -49,43 +40,9 @@ After pasting your variables in, your `.env` file should similar to this:
 With python downloaded, our `.env` created, and our environment variables set, we can finally run the program with the following command:
 
 ```shell
-  python3 cli.py
+  python3.9 cli.py
 ```
-  
-## Documentation
-
-[Documentation](https://linktodocumentation)
-
-  
-## Usage/Examples
-
-```javascript
-import Component from 'my-project'
-
-function App() {
-  return <Component />
-}
-```
-
-  
-## FAQ
-
-#### Question 1
-
-Answer 1
-
-#### Question 2
-
-Answer 2
-
-  
-## Appendix
-
-Any additional information goes here
-
   
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
-
-  
