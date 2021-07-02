@@ -1,5 +1,5 @@
-from os import getenv
 import boto3
+from os import getenv
 from pyaml_env import parse_config
 from dotenv import load_dotenv
 
@@ -55,15 +55,16 @@ def create_session(session="AYSession"):
 def main():
     session = create_session()
 
-    IAMRole.create(session)
-    # not very useful atm as I am not attaching to EC2 instance at the moment - CLI throwing sporadic errors & I don't have the time nor energy rn to bother
-    IAMInstanceProfile.create(session)
     keypairs = EC2KeyPair(config=parse_config("./config.yaml")['server'],
-                          file_path='/tmp', session=session)
+                          file_path='/tmp',
+                          session=session)
     keypairs.create()
+    IAMRole.create(session)
+    IAMInstanceProfile.create(session)
     SecurityGroup.create(session)
     ec2 = EC2Instance(keypairs.parse_vars(), session)
     ec2.launch()
+    ec2.attach_profile()
 
 
 if __name__ == "__main__":
